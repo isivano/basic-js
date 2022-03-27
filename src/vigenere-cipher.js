@@ -1,26 +1,6 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
-/**
- * Implement class VigenereCipheringMachine that allows us to create
- * direct and reverse ciphering machines according to task description
- * 
- * @example
- * 
- * const directMachine = new VigenereCipheringMachine();
- * 
- * const reverseMachine = new VigenereCipheringMachine(false);
- * 
- * directMachine.encrypt('attack at dawn!', 'alphonse') => 'AEIHQX SX DLLU!'
- * 
- * directMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => 'ATTACK AT DAWN!'
- * 
- * reverseMachine.encrypt('attack at dawn!', 'alphonse') => '!ULLD XS XQHIEA'
- * 
- * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
- * 
- */
 class VigenereCipheringMachine {
-<<<<<<< HEAD
   alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   constructor(direct) {
@@ -38,6 +18,7 @@ class VigenereCipheringMachine {
   }
 
   encrypt(string, key) {
+    if (string === undefined || key === undefined)  throw new Error("Incorrect arguments!");
     key = key.toUpperCase();
     string = string.toUpperCase();
     let encryptMatrix = this.getEncryptMatrix(key);
@@ -59,6 +40,7 @@ class VigenereCipheringMachine {
   }
 
   decrypt(string, key) {
+    if (string === undefined || key === undefined)  throw new Error("Incorrect arguments!");
     key = key.toUpperCase();
     string = string.toUpperCase();
     let encryptMatrix = this.getEncryptMatrix(key);
@@ -75,15 +57,6 @@ class VigenereCipheringMachine {
       }
     }
     return this.directMachine ? resultArray.join("") : resultArray.reverse().join("");
-=======
-  encrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
-  decrypt() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
->>>>>>> c7b6e4ca24545c5e98dd7883637123d56d3f4d9f
   }
 }
 
