@@ -10,11 +10,17 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine(/* str */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function encodeLine(str) {
+  
 }
 
 module.exports = {
   encodeLine
 };
+
+
+// assert.strictEqual(encodeLine('aaaatttt'), '4a4t');
+// assert.strictEqual(encodeLine('aabbccc'), '2a2b3c');
+// assert.strictEqual(encodeLine('abbcca'), 'a2b2ca');
+// assert.strictEqual(encodeLine('xyz'), 'xyz');
+// assert.strictEqual(encodeLine(''), '');
